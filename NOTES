@@ -1,0 +1,13 @@
+## 1 Adding User Signup
+
+- "AuthForm.js"
+  => { useRef } to get input password/email
+  => "POST" account to the API on onSubmit
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 2 Showing feedback
+
+- "AuthForm.js"
+  => { useState } To toggle/hide submit button to show <p>Loading...</p>
+  => Handling Error message from "const data = await response.json()" => "data.error.message"
