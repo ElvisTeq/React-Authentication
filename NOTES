@@ -1,8 +1,12 @@
+## Authentication API Documentation
+
+- https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
+
 ## 1 Adding User Signup
 
 - "AuthForm.js"
   => { useRef } to get input password/email
-  => "POST" account to the API on onSubmit
+  => sending "POST" request to create account
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -11,3 +15,10 @@
 - "AuthForm.js"
   => { useState } To toggle/hide submit button to show <p>Loading...</p>
   => Handling Error message from "const data = await response.json()" => "data.error.message"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 3 Adding User Login
+
+- "AuthForm.js"
+  => Sending "POST" request to signin
