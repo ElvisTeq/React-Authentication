@@ -79,3 +79,27 @@
 - "App.js"
   => { useContext } authCtx.isLoggedIn to prevent access to <Route path=''> (based on login status)
   => { Redirect } To redirect User if <Route path="*"> <Redirect to="/" /> </Route>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 9 Persisting User Authentication Status
+
+Storing JWT in LocalStorage
+
+- "auth-context.js"
+  => Storing JWT to localStorage when Login
+  => Clear JWT from localStorage after Logout
+
+  => { useState } to set initial value to "localStorage.getItem('token')"
+  => If (!token) => "null"
+  => if (token) => contextValue will contain an existing token which will keep User logged in
+
+------------------------------------------------------- localStorage.setItem("keyName", data)
+To store data in LocalStorage (only strings & numbers)
+If is a object ( JSON.stringify() )
+
+------------------------------------------------------- localStorage.removeItem("keyName")
+To delete stored data by "keyNaame"
+
+------------------------------------------------------- localStorage.clear()
+Delete all

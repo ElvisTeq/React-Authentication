@@ -10,16 +10,20 @@ const AuthContext = React.createContext({
 
 // Providing Context data to {props.children}
 export const AuthContextProvider = (props) => {
-  const [token, setToken] = useState(null);
+  // Get Token ("null") if not exist, else "contextValue" will contain an existing token which will keep User logged in
+  const initialToken = localStorage.getItem("token");
+  const [token, setToken] = useState(initialToken);
 
   const userIsLoggedIn = !!token; // not not false (true)
 
   const loginHandler = (token) => {
     setToken(token);
+    localStorage.setItem("token", token); // Receives ("keyName", data)
   };
 
   const logoutHandler = () => {
     setToken(null);
+    localStorage.removeItem("token"); // Receives ('keyName')
   };
 
   const contextValue = {
