@@ -1,5 +1,6 @@
 import { useState, useRef, useContext } from "react";
 import AuthContext from "../../store/auth-context"; // Context Data
+import { useHistory } from "react-router-dom";
 
 import classes from "./AuthForm.module.css";
 
@@ -7,6 +8,9 @@ const AuthForm = () => {
   // To get input value
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
+  // To redirect user
+  const history = useHistory();
 
   const authCtx = useContext(AuthContext); // connecting Context "AuthContextProvider()" & "AuthContext"
 
@@ -60,6 +64,7 @@ const AuthForm = () => {
       })
       .then((data) => {
         authCtx.login(data.idToken); // authCtx.login (receives a token) to "setToken()"
+        history.replace("/"); // redirecting User to main page
       })
       .catch((err) => {
         alert(err.message);

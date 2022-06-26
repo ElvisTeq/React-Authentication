@@ -50,3 +50,15 @@
   => { useRef } to get new input password
   => Sending "POST" request to change password
   => { useContext } To get context data (JWT) for "POST" request
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 6 Redirecting the User
+
+Redirecting after changing password & after login
+
+- "AuthForm.js"
+  => { useHistory } to redirect User after sucessful login
+
+- "ProfileForm.js"
+  => { useHistory } to redirect User after password change
