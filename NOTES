@@ -22,3 +22,22 @@
 
 - "AuthForm.js"
   => Sending "POST" request to signin
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 4 Managing the Auth State With Context
+
+- "./store/auth-context.js"
+  => React.createContext({}) (Creating Context)
+  => <.Provider>{props.children}</.Provider> (Providing context to all children JSX)
+
+- "index.js"
+  => Imported "auth-context.js" <AuthContextProvider> (to provide Context to all the application)
+
+- "AuthForm.js"
+  => { useContext } to connect Context "AuthContextProvider()" & "AuthContext"
+  => using "authCtx.login(tokenId)" to "setToken()" in "auth-context.js"
+
+- "MainNavigation.js"
+  => { useContext } to get "authCtx.isLoggedIn" to conditionally render <Link>
+  => Conditionally Hidding Login/Logout Button based on "isLoggedIn"
