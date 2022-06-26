@@ -41,3 +41,12 @@
 - "MainNavigation.js"
   => { useContext } to get "authCtx.isLoggedIn" to conditionally render <Link>
   => Conditionally Hidding Login/Logout Button based on "isLoggedIn"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 5 Using JWT to requests protected data
+
+- "ProfileForm.js" (Reset Password form)
+  => { useRef } to get new input password
+  => Sending "POST" request to change password
+  => { useContext } To get context data (JWT) for "POST" request
