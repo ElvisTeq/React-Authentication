@@ -9,6 +9,11 @@ const MainNavigation = () => {
 
   const { isLoggedIn } = authCtx; // Getting Context data (to conditionally render <Link>)
 
+  const logoutHandler = () => {
+    authCtx.logout(); // Function from Context
+    // optional: Could redirect User here (Logging out from "ProfileForm.js" is not redirecting)
+  };
+
   return (
     <header className={classes.header}>
       <Link to="/">
@@ -28,7 +33,7 @@ const MainNavigation = () => {
           )}
           {isLoggedIn && (
             <li>
-              <button>Logout</button>
+              <button onClick={logoutHandler}>Logout</button>
             </li>
           )}
         </ul>

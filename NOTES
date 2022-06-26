@@ -62,3 +62,10 @@ Redirecting after changing password & after login
 
 - "ProfileForm.js"
   => { useHistory } to redirect User after password change
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 7 Adding Logout
+
+- "MainNavigation.js"
+  => Binding Context logout function to the "logout" <Button>
