@@ -55,7 +55,7 @@
 
 ## 6 Redirecting the User
 
-Redirecting after changing password & after login
+\***\* Redirecting after changing password & after login \*\***
 
 - "AuthForm.js"
   => { useHistory } to redirect User after sucessful login
@@ -69,3 +69,13 @@ Redirecting after changing password & after login
 
 - "MainNavigation.js"
   => Binding Context logout function to the "logout" <Button>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 8 Protecting Frontend Pages (Navigation Guard)
+
+\***\* Proventing User to visit unwanted Routes \*\***
+
+- "App.js"
+  => { useContext } authCtx.isLoggedIn to prevent access to <Route path=''> (based on login status)
+  => { Redirect } To redirect User if <Route path="*"> <Redirect to="/" /> </Route>
