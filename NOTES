@@ -103,3 +103,21 @@ To delete stored data by "keyNaame"
 
 ------------------------------------------------------- localStorage.clear()
 Delete all
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 10 Adding auto-logout
+
+- "auth-context.js"
+  => Adding expiration time to the "loginHandler" Function
+  => Created Helper function to "calculateRemainingTime()"
+  => "authCtx.login" now receives (token, expirationTime)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 11 Finishing Steps
+
+- "auth-context.js"
+  => Clearing timer when logout
+  => Storing expiration timer to localStorage
+  => Using { useEffect } to check if (timer <= 6000) then { clear token/timer, return null }
